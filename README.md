@@ -1,70 +1,130 @@
-# Getting Started with Create React App
+# Doctor Appointment System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application for managing doctor appointments. Users can select a doctor, view available time slots, book appointments, and manage their appointments.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Features
+1. **Doctor Selection**:
+   - View a list of doctors and select one.
+2. **Calendar/Slot View**:
+   - Choose a date and view available time slots for the selected doctor.
+3. **Appointment Booking**:
+   - Book an appointment by filling out a form with patient details.
+4. **Appointment Management**:
+   - View a list of upcoming appointments.
+   - Cancel an appointment.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
+- **Frontend**:
+  - React.js
+  - HTML, CSS (Modern and Responsive Design)
+- **Backend**:
+  - Node.js
+  - Express.js
+  - SQLite (Database)
+- **Other Tools**:
+  - Moment.js (Date and Time Handling)
+  - Fetch API (HTTP Requests)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## Setup Instructions
+ ### 2. Backend Setup
+   1. Navigate to the backend directory:
+        ```bash
+           cd backend
+        ```
+  2. Install dependencies::
+        ```bash
+           npm install
+        ```   
+  3. Start the backend server::
+        ```bash
+           node server.js
+        ```     
+        The backend will run on http://localhost:5000.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ ### 2. Frontend Setup
+   1. Navigate to the Frontend  directory:
+        ```bash
+           cd Frontend 
+        ```
+  2. Install dependencies::
+        ```bash
+           npm install
+        ```   
+  3. Start the Frontend server::
+        ```bash
+           npm start
+        ```     
+        The backend will run on http://localhost:3000.
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Steps to Book and Manage Appointments
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Select a Doctor:**
+   - On the homepage, select a doctor from the list.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Choose a Date and Time Slot:**
+   - After selecting a doctor, choose a date and view available time slots.
 
-### `npm run eject`
+3. **Book an Appointment:**
+   - Click on an available time slot and fill out the appointment form.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. **Manage Appointments:**
+   - View your upcoming appointments on the appointments list.
+   - Cancel an appointment by clicking the **Cancel** button.
+     
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Project Structure
+   ```bash
+      doctor-appointment-system/
+      ├── backend/
+      │   ├── server.js           # Backend server code
+      │   ├── appointments.db     # SQLite database file
+      ├── frontend/
+      │   ├── public/             # Static assets
+      │   ├── src/
+      │   │   ├── components/     # React components
+      │   │   │   ├── DoctorSelection/
+      │   │   │   │   ├── index.js
+      │   │   │   │   ├── index.css
+      │   │   │   ├── CalendarView/
+      │   │   │   │   ├── index.js
+      │   │   │   │   ├── index.css
+      │   │   │   ├── AppointmentForm/
+      │   │   │   │   ├── index.js
+      │   │   │   │   ├── index.css
+      │   │   │   ├── AppointmentList/
+      │   │   │   │   ├── index.js
+      │   │   │   │   ├── index.css
+      │   │   ├── App.js          # Main application component
+      │   │   ├── App.css         # Global styles
+      │   │   ├── index.js        # Entry point
+      ├── README.md               # Project documentation
+   ``` 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## API Endpoints
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Doctors
 
-## Learn More
+- **GET `/doctors`**:  
+  Fetch all doctors.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **GET `/doctors/:id/slots`**:  
+  Fetch available time slots for a doctor on a given date.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Appointments
 
-### Code Splitting
+- **GET `/appointments`**:  
+  Fetch all appointments.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **POST `/appointments`**:  
+  Book a new appointment.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **DELETE `/appointments/:id`**:  
+  Cancel an appointment.
