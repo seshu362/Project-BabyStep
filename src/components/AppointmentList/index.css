@@ -1,0 +1,35 @@
+.appointment-list {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .appointment-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 400px;
+    background-color: #fff;
+  }
+  
+  .appointment-card h3 {
+    margin: 0;
+    color: #007bff;
+  }
+  
+  .appointment-card p {
+    margin: 5px 0;
+  }
+  
+  .appointment-card button {
+    padding: 5px 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .appointment-card button:hover {
+    background-color: #cc0000;
+  }

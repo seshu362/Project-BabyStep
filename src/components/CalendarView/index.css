@@ -1,0 +1,40 @@
+.calendar-view {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .slot {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    background-color: #fff;
+  }
+  
+  .slot:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .loading,
+  .error {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ff4d4d;
+  }
